@@ -1,8 +1,37 @@
 # converting_excel_prayer_times_to_Sqlite_DB_file
 Converting Prayer Times Excel Sheet to SQLite file DB
+# 🕌 Prayer Times Excel-to-SQLite Converter
 
-🕌 Prayer Times Excel-to-SQLite ConverterA professional Python desktop application that automates the migration of prayer time schedules from Microsoft Excel (.xlsx) files into optimized SQLite databases.📝 What This Project DoesThis tool is designed for developers and mosque administrators who need to convert manual Excel schedules into a structured database format for mobile apps, websites, or digital displays.Key Features:Graphical User Interface (GUI): A simple window built with Tkinter for easy file selection and database naming.Smart Time Normalization: * Automatically fixes inconsistent time formats (e.g., converts 6:35 to 06:35).Strips unnecessary seconds or date information from Excel time objects.Data Integrity:Auto-ID: Automatically generates a unique Primary Key (id) for every row.Duplicate Prevention: Creates a Unique Composite Index on (month, day) to ensure no date is entered twice.Data Cleaning: Automatically handles accidental spaces or inconsistent capitalization in Excel headers (e.g., " Fajr " → "fajr").High Performance: Includes database indexing for near-instant query speeds.🚀 How to Run1. PrerequisitesYou need Python 3.11+ installed. You will also need the pandas and openpyxl libraries to handle the Excel data.Install the requirements via terminal:Bashpip install pandas openpyxl
-2. Launching the AppDownload the prayer_gui.py script.Navigate to the folder in your terminal.Run the application:Bashpython prayer_gui.py
-3. Usage StepsSelect File: Click Browse and select your Excel file (e.g., Göteborg.xlsx).Name Database: Enter your desired filename (e.g., sweden_prayers.db).Name Table: Enter the table name (e.g., goteborg_times).Convert: Click the green CONVERT button. The .db file will appear in your project folder instantly.🛠️ Building a Standalone Executable (.exe)To package this as a Windows application with a custom icon:Install PyInstaller:Bashpip install pyinstaller
-Build the file:Bashpyinstaller --noconsole --onefile --icon="app_icon.ico" prayer_gui.py
-Find your finished app in the /dist folder.📊 Database SchemaThe generated SQLite table uses the following structure:ColumnTypeDescriptionidINTEGERPrimary Key (Auto-Increment)monthINTEGERMonth of the year (1-12)dayINTEGERDay of the month (1-31)fajrTEXTStandardized HH:MMsunriseTEXTStandardized HH:MMdhuhurTEXTStandardized HH:MMasrTEXTStandardized HH:MMmaghribTEXTStandardized HH:MMishaaTEXTStandardized HH:MM Developed for prayer apps ecosystem.
+Converting Prayer Times Excel Sheet to SQLite file DB.
+
+A professional Python desktop application that automates the migration of prayer time schedules from Microsoft Excel (.xlsx) files into optimized SQLite databases.
+
+## 📝 What This Project Does
+This tool is designed for developers and mosque administrators who need to convert manual Excel schedules into a structured database format for mobile apps, websites, or digital displays.
+
+### Key Features:
+* **Graphical User Interface (GUI):** A simple window built with Tkinter for easy file selection and database naming.
+* **Smart Time Normalization:** Automatically fixes inconsistent time formats (e.g., converts 6:35 to 06:35). Strips unnecessary seconds or date information from Excel time objects.
+* **Data Integrity:**
+    * **Auto-ID:** Automatically generates a unique Primary Key (id) for every row.
+    * **Duplicate Prevention:** Creates a Unique Composite Index on (month, day) to ensure no date is entered twice.
+    * **Data Cleaning:** Automatically handles accidental spaces or inconsistent capitalization in Excel headers (e.g., " Fajr " -> "fajr").
+* **High Performance:** Includes database indexing for near-instant query speeds.
+
+## 🚀 How to Run
+
+### 1. Prerequisites
+You need Python 3.11+ installed. You will also need the `pandas` and `openpyxl` libraries to handle the Excel data.
+
+Install the requirements via terminal:
+```bash
+pip install pandas openpyxl
+
+3. Usage Steps
+Select File: Click Browse and select your Excel file (e.g., Göteborg.xlsx).
+
+Name Database: Enter your desired filename (e.g., sweden_prayers.db).
+
+Name Table: Enter the table name (e.g., goteborg_times).
+
+Convert: Click the green CONVERT button. The .db file will appear in your project folder instantly.
