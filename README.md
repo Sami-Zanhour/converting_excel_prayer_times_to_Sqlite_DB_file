@@ -26,12 +26,3 @@ You need Python 3.11+ installed. You will also need the `pandas` and `openpyxl` 
 Install the requirements via terminal:
 ```bash
 pip install pandas openpyxl
-
-3. Usage Steps
-Select File: Click Browse and select your Excel file (e.g., Göteborg.xlsx).
-
-Name Database: Enter your desired filename (e.g., sweden_prayers.db).
-
-Name Table: Enter the table name (e.g., goteborg_times).
-
-Convert: Click the green CONVERT button. The .db file will appear in your project folder instantly.
